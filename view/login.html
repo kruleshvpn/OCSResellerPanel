@@ -1,0 +1,113 @@
+<style type='text/css'>
+.footer-credits { padding: 0px 0;}
+.footer-credits { font-size:14px; }
+.mage1{background:#353738; border-bottom:2px solid #444; border-top:4px solid $(body.background.color); padding:30px 0 25px;}
+.mage2{padding:16px 18px;}
+.deen{float:right;}
+
+#top-nav { margin-top: 40px; }
+.top-nav{background:rgb(42,46,49); overflow:hidden; width: 100%;}
+
+.container {margin: 0 auto; padding: 0 15px; position: relative; max-width: 1200px;}
+
+.Pagemenu {display: block; float:left; }
+.Pagemenu li {display: inline-block; position: relative; z-index: 10; margin:0;}
+.Pagemenu li a {font-size: 12px; font-weight: 600; margin-left:-5px; text-decoration: none; padding: 3px 12px; border-right:1px solid #424242; display: block; color: #ddd; transition: all 0.2s ease-in-out 0s;}
+.Pagemenu li a:hover,.Pagemenu li:hover>a, .Pagemenu li a.home {background:rgb(54,59,63); color:#fff;}
+
+.social-ico{float:right; display:inline; overflow:hidden;}
+.social-ico a{color: #fff; float: left; font-size: 16px; opacity: 0.9; height: 30px; line-height: 32px; text-align: center; width: 30px;}
+.social-ico a:hover{opacity:1}
+.social-ico a:hover.tt1{background:#3B5998;}
+.social-ico a:hover.tt2{background:#D64136;}
+.social-ico a:hover.tt3{background:#19BFE5;}
+.social-ico a:hover.tt4{background:#D88B43;}
+
+@media screen and (max-width: 260px){
+.container{padding:0 3px;}
+}
+@media screen and (max-width: 340px){
+.container{padding:0 5px;}
+}
+@media screen and (max-width: 400px){
+.container{padding:0 8px;}
+}
+@media screen and (max-width: 800px) {
+.social-ico{margin-top:-42px;}
+}
+@media screen and (max-width: 1000px) {
+.deen{float:none;}
+.footer-credits{text-align:center;}
+}
+</style>
+
+<div class='mage'>
+	<div class='top-nav'>
+		<div class='container'>
+
+<!-- Customize Top Menu Here -->
+<ul class='Pagemenu'>
+<li class='home1'><a href='http://139.59.232.37:85' rel='nofollow'><i class='fa fa-home'></i> Home</a></li>
+<li><a href='http://139.59.232.37/p/privacy-policy.html'><i class='fa fa-sitemap' rel='nofollow'></i> Policy</a></li>
+<li><a href='http://registerid.wasap.my/'><i class='fa fa-trophy' rel='nofollow'></i> Register Now</a></li>
+</ul>
+
+<!-- Social Profile Icons -->
+<div class='social-ico'>
+<a class='tt1' href='https://www.facebook.com/kaselurk' rel='nofollow' title='Follow us on Facebook'><i class='fa fa-facebook'></i></a>
+<a class='tt2' href='https://plus.google.com/111974136184655094129' rel='nofollow' title='Add to Google+ circle'><i class='fa fa-google-plus'></i></a>
+<a class='tt3' href=https://twitter.com/kaselurk' rel='nofollow' title='Follow us on Twitter'><i class='fa fa-twitter'></i></a>
+</div>
+		</div>
+	</div>
+</div><!-- mage -->
+
+<section id="#login">
+    <div class="container">
+        <div class="row ver-parent">
+            <div class="col-md-4 col-md-offset-4 ver-center">
+                <check if="{{ @message }}">
+                    <div class="alert alert-{{ @message['type'] }}">{{ @message['data'] }}</div>
+                </check>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-sign-in fa-fw"></i> Please Login || Login Panel</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" action="/login" method="POST">
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                                        <input class="form-control" placeholder="Username" name="username" type="text" autofocus required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                                        <input class="form-control" placeholder="Password" name="password" type="password" required>
+                                    </div>
+                                </div>
+                                <button class="btn btn-lg btn-success btn-block">Login</button>
+                            </fieldset>
+                        </form>
+                    </div>
+					
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-sign-in fa-fw"></i> Belum mendaftar sebagai reseller? Klik? <b><a href="https://goo.gl/FHRKJO" class="btn btn-default" rel="nofollow"><i class="fa fa-download fa-fw"></i> Daftar!</a></b></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class='footer-credits'>
+	<div class='mage2'>
+		<div class='container'>
+			<div class='attribution'><b><a href='http://139.59.232.37:85' rel='copyright'>SHVPN</a></b> © Copyright 2011-2017, All Right Reserved. <span class='deen'><a href=' http://139.59.232.37:85' rel='nofollow'>Terms Of Service</a> | <a href='http://registerid.wasap.my/' rel='nofollow'>Contact</a>.</span></div>
+	
+		</div>
+	</div><!-- mage2 -->
+</div><!--footer credits -->
+
