@@ -14,7 +14,7 @@ class Login extends Controller {
 		$user->load(array('username=?',$name));
 		if ( ! $user->dry()) {
 			if ( ! $user->active == 1) {
-				$this->flash('Akaun Anda Di Lock Sementara');
+				$this->flash('Akaun Anda Di Lock Sementara Waktu');
 				$f3->reroute('/');
 			}
 			elseif (Check::pass($pass, $user->password)) {
@@ -22,7 +22,7 @@ class Login extends Controller {
 				$f3->reroute('/home');
 			}
 		}
-		$this->flash('Username atau Password Salah, Sila cuba lagi');
+		$this->flash('Username / Password Anda Salah, Silakan cuba lagi');
 		$f3->reroute('/');
 	}
 

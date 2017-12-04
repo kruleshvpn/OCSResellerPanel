@@ -30,19 +30,19 @@ class Server extends \Home {
 	function Buy($f3) {
 		$server = $this->loadServer();
 		$account = new \Webmin($server);
-		if (($Kredit = $this->me->Kredit)<$server->price) {
-			$this->flash('Kredit Anda Kurang, Hubungi Admin utk Deposit');
+		if (($saldo = $this->me->saldo)<$server->price) {
+			$this->flash('Jumlah Kredit Anda Kurang, Hubungi Admin utk Deposit');
 			$f3->reroute($f3->get('URI'));
 		}
 		if ( ! $account->check($f3->get('POST.user'))) {
-			$this->flash('Username Sudah Digunakan, cuba yang lain');
+			$this->flash('Username Sudah Digunakan, Cuba yang Lain');
 			$f3->reroute($f3->get('URI'));
 		}
 		$account->copyFrom('POST');
 		$account->real = $this->me->username;
 		if ($f3->exists('POST.pass',$pass)) {
 			if ( ! \Check::Confirm('POST.pass')) {
-				$this->flash('Password Confirmation did not match');
+				$this->flash('Ralat!! Password tidak sama');
 				$f3->reroute($f3->get('URI'));
 			}
 			$account->pass = $account->crypt($pass);
@@ -53,7 +53,7 @@ class Server extends \Home {
 			$this->flash('Gagal, Sila Cuba Sebentar Lagi');
 			$f3->reroute($f3->get('URI'));
 		}
-		$this->me->Kredit = $this->me->Kredit-$server->price;
+		$this->me->saldo = $this->me->saldo-$server->price;
 		$this->me->save();
 		$this->flash('Pembelian Account Berjaya','success');
 		$f3->set('SESSION.uid',$account->uid);

@@ -27,13 +27,13 @@ class Home extends Controller {
 		if ( ! Check::pass($f3->get('POST.oldpass'), $me->password)) {
 			$this->flash('Password Lama Salah');
 		} elseif ( ! Check::confirm('POST.password')) {
-			$this->flash('Password Confirmation did not match');
+			$this->flash('Ralat!! Password tidak sama');
 		} elseif ( ! $f3->exists('POST.password',$pass)) {
 			$this->flash('Password Tidak Boleh Kosong');
 		} else {
 			$me->password = $pass;
 			$me->save();
-			$this->flash('Tukar Password Berjaya','success');
+			$this->flash('Password Berjaya Ditukar','success');
 		}
 		$f3->reroute($f3->get('URI'));
 	}

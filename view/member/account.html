@@ -19,15 +19,15 @@
                 </div>
                 <table class="table table-hover">
                     <tbody>
-                        <tr><td>Location</td><td>{{ @server->country }}</td></tr>
+                        <tr><td>Lokasi</td><td>{{ @server->country }}</td></tr>
                         <tr><td>Host</td><td>{{ @server->host }}</td></tr>
                         <tr><td>Username</td><td>{{ @user->user }}</td></tr>
                         <tr><td>Password</td><td>{{ @user->pass }}</td></tr>
                         <tr><td>Port Dropbear</td><td>80, 443</td></tr>
                         <tr><td>Port OpenSSH</td><td>22, 143</td></tr>
                         <tr><td>Port OpenVPN</td><td>1194</td></tr>
-                        <tr><td>Port Squid</td><td>3128, 8000, 8080, 80</td></tr>
-                        <tr><td>Config OpenVPN <a href="http://{{ @server->host }}:81/client.ovpn" class="btn btn-default"><i class="fa fa-shopping-cart fa-fw"></i> Download</a></td></tr>
+                        <tr><td>Port Squid</td><td>3128, 8000, 8080</td></tr>
+                        <tr></tr>
                         <tr><td>Expired Date</td><td>{{ \Webmin::exp_decode(@user->expire) }}</td></tr>
 						<tr class="hidden-print">
                             <td colspan="2">

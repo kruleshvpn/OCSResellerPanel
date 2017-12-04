@@ -94,7 +94,7 @@ class Server extends \Home {
 		$account->copyFrom('POST');
 		if ($f3->exists('POST.pass',$pass)) {
 			if ( ! \Check::Confirm('POST.pass')) {
-				$this->flash('Password Confirmation did not match');
+				$this->flash('Ralat!! Password tidak sama');
 				$f3->reroute($f3->get('URI'));
 			}
 			$account->pass = $account->crypt($pass);
@@ -124,7 +124,7 @@ class Server extends \Home {
 		$server = $this->loadServer();
 		$account = $this->loadUser($server);
 		$account->erase();
-		$this->flash('Account Berhasil Dihapus','success');
+		$this->flash('Account Berjaya Dibuang','success');
 		$f3->reroute('/home/admin/server/'.$server->id.'/account');
 	}
 // "create\:$svr['user']\:$svr['pass']\:$svr['uid']\:$svr['gid']\:$svr['real']\:$svr['home']\:$svr['shell']\:$svr['min']\:$svr['max']\:$svr['warn']\:$svr['inactive']\:$svr['expire']";

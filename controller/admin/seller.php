@@ -41,14 +41,14 @@ class Seller extends \Home {
 		if ($seller->dry()) {
 			$seller->load(array('username=?',$f3->get('POST.username')));
 			if ( ! $seller->dry()) {
-				$this->flash('User sudah Didaftarkan');
+				$this->flash('User sudah didaftarkan');
 				$f3->reroute('/home/admin/seller/add');
 			}
 		}
 		$seller->copyFrom('POST');
 		if ($f3->exists('POST.password',$pass)) {
 			if ( ! \Check::Confirm('POST.password')) {
-				$this->flash('Password Confirmation did not match');
+				$this->flash('Ralat!! Password tidak sama');
 				$f3->reroute($f3->get('URI'));
 			}
 			$seller->password = $pass;
@@ -78,7 +78,7 @@ class Seller extends \Home {
 		$seller = $this->seller;
 		$seller->load(array('id=?',$post['id']));
 		$seller->reroute('/home/admin/seller');
-		$seller->Kredit = ($seller->Kredit + $post['deposit']);
+		$seller->saldo = ($seller->saldo + $post['deposit']);
 		$seller->save();
 		$this->flash('Deposit Berjaya','success');
 		$f3->reroute('/home/admin/seller');
