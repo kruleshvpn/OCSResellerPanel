@@ -31,18 +31,18 @@ class Server extends \Home {
 		$server = $this->loadServer();
 		$account = new \Webmin($server);
 		if (($Kredit = $this->me->Kredit)<$server->price) {
-			$this->flash('Kredit Anda Kurang, Hub Admin utk Deposit');
+			$this->flash('Kredit Anda Kurang, Hubungi Admin utk Deposit');
 			$f3->reroute($f3->get('URI'));
 		}
 		if ( ! $account->check($f3->get('POST.user'))) {
-			$this->flash('User Sudah Terdaftar, Coba yang Lain');
+			$this->flash('Username Sudah Digunakan, cuba yang lain');
 			$f3->reroute($f3->get('URI'));
 		}
 		$account->copyFrom('POST');
 		$account->real = $this->me->username;
 		if ($f3->exists('POST.pass',$pass)) {
 			if ( ! \Check::Confirm('POST.pass')) {
-				$this->flash('Konfirmasi Password Tidak Cocok');
+				$this->flash('Password Confirmation did not match');
 				$f3->reroute($f3->get('URI'));
 			}
 			$account->pass = $account->crypt($pass);
@@ -50,12 +50,12 @@ class Server extends \Home {
 		$active = date("Y/m/d",strtotime("+30 days"));
 		$account->expire = \Webmin::exp_encode($active);
 		if( ! $account->save()) {
-			$this->flash('Gagal, Coba Beberapa Saat Lagi');
+			$this->flash('Gagal, Sila Cuba Sebentar Lagi');
 			$f3->reroute($f3->get('URI'));
 		}
 		$this->me->Kredit = $this->me->Kredit-$server->price;
 		$this->me->save();
-		$this->flash('Pembelian Account Berhasil','success');
+		$this->flash('Pembelian Account Berjaya','success');
 		$f3->set('SESSION.uid',$account->uid);
 		$f3->set('SESSION.pass',$pass);
 		$f3->reroute($f3->get('URI').'/success');

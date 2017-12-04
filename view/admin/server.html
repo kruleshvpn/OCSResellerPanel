@@ -36,13 +36,13 @@
                         </div>
                         <div class="form-group">
                             <label>IP / Host</label>
-                            <input class="form-control" placeholder="192.168.1.1 atau www.example-server.com" name="host" type="text" value="{{ @server->host }}" required>
+                            <input class="form-control" placeholder="192.168.1.1" name="host" type="text" value="{{ @server->host }}" required>
                         </div>
                         <div class="form-group">
                             <label>Harga Langganan / Bulan</label>
                             <div class="input-group">
                                 <span class="input-group-addon">RM. </span>
-                                <input class="form-control" placeholder="5" name="price" type="number" step="100" value="{{ @server->price }}" required>
+                                <input class="form-control" placeholder="5" name="price" type="number" step="5" value="{{ @server->price }}" required>
                             </div>
                         </div>
                         <div class="form-group">
