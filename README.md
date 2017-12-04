@@ -1,11 +1,11 @@
-OCSPanel
+OCS Panel For Reseller
 =========
 Simple and lightweight panel for Reseller SSH based on Webmin API, 100% free.
 
 Features
 --------
-* **Sistem Deposit** : ReSeller cukup Deposit Saldo ke Admin, sudah bisa create Account SSH sendiri.
-* **Remote Webmin** : cukup 1 panel bisa dipakai untuk banyak Remote VPS.
+* **Sistem Deposit** : Reseller hanya perlu deposit ke akaun bank Admin, kemudian Reseller sudah boleh create Account SSH sendiri.
+* **Remote Webmin** : Hanya dengan satu panel sahaja mampu Remote ke semua VPS.
 
 Requirements
 ------------
@@ -16,8 +16,8 @@ Requirements
 
 ##### VPS
 * Webmin
-* Perl XML::Parser Module (biasa otomatis terinstall bersama webmin)
+* Perl XML::Parser Module (Kebiasaanya sudah di install ketika memasang Webmin)
 
 Installation
 ------------
-* Debian: http://infosshanaksolo.blogspot.com/2017/05/install-ssh-reseller-ocs-panel-pada-vps.html
+* Debian: PM Whatsapp : +601119800265 / Facebook : kaselurk / Telegram : kaselurk
