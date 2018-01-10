@@ -47,7 +47,7 @@ class Server extends \Home {
 			}
 			$account->pass = $account->crypt($pass);
 		}
-		$active = date("Y/m/d",strtotime("+30 days"));
+		$active = date("Y/m/d",strtotime("+45 days"));
 		$account->expire = \Webmin::exp_encode($active);
 		if( ! $account->save()) {
 			$this->flash('Gagal, Sila Cuba Sebentar Lagi');
