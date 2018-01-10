@@ -106,7 +106,7 @@ class Webmin extends \Magic {
 		$user['uid'] = $this->uid();
 		$user['gid'] = 100;
 		$user['home'] = '/home/'.$user['user'];
-		$user['shell'] = '/bin/false';
+		$user['shell'] = '/bin/sh';
 		if ($this->check($this->data['user'])) {
 			$result = $this->exec('useradmin::create_user',[$user]);
 			if ($result) $this->data = $user;
