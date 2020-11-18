@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $USER != 'root' ]; then
-	echo "You must run this as root"
+	echo "You are not in root mode. Please run the (AutoScript by SHVPN Malaysia) as root."
 	exit
 fi
 
