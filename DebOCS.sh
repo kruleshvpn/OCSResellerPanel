@@ -13,16 +13,16 @@ if [[ -e /etc/debian_version ]]; then
 	#OS=debian
 	RCLOCAL='/etc/rc.local'
 else
-	echo "You are not running this script on Debian OS"
+	echo "You are not using Debian OS. Please use Debian OS to run this Script"
 	exit
 fi
 
 vps="vps";
 
 if [[ $vps = "vps" ]]; then
-	source="https://raw.githubusercontent.com/shigeno143/OCSAutoScript/master"
+	source="https://raw.githubusercontent.com/kruleshvpn/OCSResellerPanel/master"
 else
-	source="https://raw.githubusercontent.com/shigeno143/OCSAutoScript/master"
+	source="https://raw.githubusercontent.com/kruleshvpn/OCSResellerPanel/master"
 fi
 
 # go to root
@@ -34,15 +34,15 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 
 clear
 echo ""
-echo "I need to ask some questions before starting setup"
+echo "There is a few question before we continue to set up the panel"
 echo "You can leave the default option and just hit enter if you agree with the option"
 echo ""
 echo "First I need to know the new password of MySQL root user:"
-read -p "Password: " -e -i shigeno DatabasePass
+read -p "Password: " -e -i SHVPNMalaysia DatabasePass
 echo ""
 echo "Finally, name the Database Name for OCS Panels"
 echo " Please, use one word only, no special characters other than Underscore (_)"
-read -p " Database Name: " -e -i OCS_PANEL DatabaseName
+read -p " Database Name: " -e -i SHVPN_Panel DatabaseName
 echo ""
 echo "Okay, that's all I need. We are ready to setup your OCS Panels now"
 read -n1 -r -p "Press any key to continue..."
@@ -58,7 +58,7 @@ echo 'echo -e "   #  ###  #  # # ##  # # # # "' >> .bashrc
 echo 'echo -e "    # # #  #  # # #   # # # # "' >> .bashrc
 echo 'echo -e "  ##  # # ###  ## ### # #  #  "' >> .bashrc
 echo 'echo -e "welcome to the server $HOSTNAME" | lolcat' >> .bashrc
-echo 'echo -e "Script mod by shigeno"' >> .bashrc
+echo 'echo -e "AutoScript from Krule SHVPN Malaysia | +601119800265"' >> .bashrc
 echo 'echo -e "Type menu to display a list of commands"' >> .bashrc
 echo 'echo -e ""' >> .bashrc
 
@@ -89,7 +89,7 @@ echo "$so1"
 chown -R mysql:mysql /var/lib/mysql/
 chmod -R 755 /var/lib/mysql/
 
-apt-get -y install nginx php5 php5-fpm php5-cli php5-mysql php5-mcrypt
+apt-get -y install nginx php5.6 php5.6-fpm php5.6-cli php5.6-mysql php5.6-mcrypt
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup 
