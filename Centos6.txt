@@ -2,7 +2,7 @@
 
 #Initializing var
 if [[ "$USER" != 'root' ]]; then
-	echo "Run this script with root privileges."
+	echo "You are not in root mode. Please run the (AutoScript by SHVPN Malaysia) as root."
 	exit
 fi
 
