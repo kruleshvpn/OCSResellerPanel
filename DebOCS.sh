@@ -175,9 +175,9 @@ chmod 644 /home/vps/public_html/config/route.php
 # info
 clear
 echo "=======================================================" | tee -a log-install.txt
-echo "Please login Reseller Panel at http://$MYIP:85" | tee -a log-install.txt
+echo "Please login Reseller Panel at http://$MYIP" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-echo "Auto Script Installer OCS Panels Mod by shigeno"  | tee -a log-install.txt
+echo "Auto Script Installer OCS Panels by Krule SHVPN Malaysia"  | tee -a log-install.txt
 echo "                        "  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "Thanks " | tee -a log-install.txt
