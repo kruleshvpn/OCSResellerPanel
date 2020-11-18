@@ -94,24 +94,24 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup 
 mv /etc/nginx/conf.d/vps.conf /etc/nginx/conf.d/vps.conf.backup 
-wget -O /etc/nginx/nginx.conf "http://script.hostingtermurah.net/repo/blog/ocspanel-debian7/nginx.conf" 
-wget -O /etc/nginx/conf.d/vps.conf "http://script.hostingtermurah.net/repo/blog/ocspanel-debian7/vps.conf" 
-sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/fpm/php.ini 
-sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/kruleshvpn/AutoscriptSHVPN/master/conf/nginx.conf" 
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/kruleshvpn/AutoscriptSHVPN/master/conf/vps.conf" 
+sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5.6/fpm/php.ini 
+sed -i 's/listen = \/var\/run\/php5.6-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5.6/fpm/pool.d/www.conf
 
 useradd -m vps
 mkdir -p /home/vps/public_html
 rm /home/vps/public_html/index.html
 echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
-chmod -R g+rw /home/vps/public_html service php5-fpm restart
-service php5-fpm restart
+chmod -R g+rw /home/vps/public_html service php5.6-fpm restart
+service php5.6-fpm restart
 service nginx restart
 
 apt-get -y install zip unzip
 cd /home/vps/public_html
 cd /home/vps/public_html
-wget https://raw.githubusercontent.com/shigeno143/OCSAutoScript/master/OCSPanel.zip
+wget https://raw.githubusercontent.com/file here
 unzip OCSPanel.zip
 rm -f OCSPanel.zip
 chown -R www-data:www-data /home/vps/public_html
@@ -134,7 +134,7 @@ chmod 777 /home/vps/public_html/config/route.php
 apt-get -y --force-yes -f install libxml-parser-perl
 
 clear
-echo "Open Browser, access http://$MYIP:85/ and complete the data as below!"
+echo "Open Browser, access http://$MYIP/ and complete the data as below!"
 echo "Database:"
 echo "- Database Host: localhost"
 echo "- Database Name: $DatabaseName"
