@@ -22,7 +22,8 @@ wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
 apt-get update
 apt-get upgrade -y
-apt-get -y install nginx php5.6 php5.6-fpm php5.6-cli php5.6-mysql php5.6-mcrypt
+apt-get install php5.4-bcmath php5.4-common php5.4-dba php5.4-gd php5.4-imap php5.4-ioncube-loader php5.4-ldap php5.4-mbstring php5.4-mcrypt php5.4-mysql php5.4-odbc php5.4-pdo php5.4-pear php5.4-pecl-apc php5.4-process php5.4-pspell php5.4-recode php5.4-snmp php5.4-soap php5.4-tidy php5.4-xml php5.4-xmlrpc
+#apt-get install php5.6-bcmath php5.6-common php5.6-dba php5.6-gd php5.6-imap php5.6-ioncube-loader php5.6-ldap php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-odbc php5.6-pdo php5.6-pear php5.6-pecl-apc php5.6-process php5.6-pspell php5.6-recode php5.6-snmp php5.6-soap php5.6-tidy php5.6-xml php5.6-xmlrpc
 #apt-get -y install php7.0 php7.0-fpm php7.0-cli php7.0-mysql php7.0-mcrypt
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
